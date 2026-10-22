@@ -1,0 +1,1276 @@
+
+/* =====================================================
+   DUHA & MOATASEM
+   LUXURY WEDDING INVITATION
+   IVORY • PEARL WHITE • CHAMPAGNE GOLD
+===================================================== */
+
+/* ---------- GLOBAL ---------- */
+
+:root {
+    --ivory: #fffdf8;
+    --cream: #fff9ef;
+    --pearl: #ffffff;
+    --champagne: #f5e9d3;
+    --soft-gold: #c7a66a;
+    --deep-gold: #a98a55;
+    --text: #806b50;
+    --muted: #a4937d;
+    --line: #eadfcf;
+    --shadow: 0 15px 45px rgba(165, 136, 93, 0.12);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--ivory);
+    color: var(--text);
+    font-family: "DM Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+  
+  [hidden] {
+    display: none !important;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    font-family: "Cormorant Garamond", serif;
+  }
+  
+  p {
+    line-height: 1.8;
+  }
+  
+  /* ---------- MAIN WEBSITE ---------- */
+  
+  .site {
+    width: min(100%, 570px);
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-bottom: 95px;
+    overflow: hidden;
+    background: var(--ivory);
+    box-shadow: 0 0 65px rgba(195, 168, 124, 0.12);
+  }
+  
+  .small-label {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--deep-gold);
+    text-transform: uppercase;
+  }
+  
+  .floral-symbol {
+    margin: 18px 0;
+    font-size: 44px;
+    color: var(--soft-gold);
+  }
+  
+  .gold-line {
+    width: 80px;
+    height: 1px;
+    margin: 22px auto;
+    background: var(--soft-gold);
+  }
+  
+  /* =====================================================
+     OPENING — FULL SCREEN FLORAL INVITATION
+  ===================================================== */
+  
+  .opening {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+  
+    margin: 0;
+    padding: 0;
+  
+    overflow: hidden;
+    background: #fff9f1;
+  
+    opacity: 1;
+    visibility: visible;
+  
+    transition:
+      opacity 1.1s ease,
+      visibility 1.1s ease;
+  }
+  
+  /* Soft background fills the desktop sides */
+  
+  .opening::before {
+    content: "";
+    position: absolute;
+    inset: -35px;
+  
+    background-image: url("assets/wedding-opening.png");
+    background-size: cover;
+    background-position: center;
+  
+    filter: blur(30px) brightness(1.12);
+    opacity: 0.55;
+    transform: scale(1.08);
+  
+    pointer-events: none;
+  }
+  
+  /* The actual card stays fully visible */
+  
+  .wedding-cover {
+    position: relative;
+    z-index: 1;
+  
+    width: min(100vw, 66.6667dvh);
+    height: auto;
+    aspect-ratio: 2 / 3;
+  
+    overflow: hidden;
+  
+    background: var(--cream);
+  
+    box-shadow:
+      0 0 45px rgba(170, 137, 92, 0.15),
+      0 15px 55px rgba(130, 105, 75, 0.12);
+  
+    animation: coverEntrance 1.35s ease both;
+  }
+  
+  .cover-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+  
+    object-fit: contain;
+    object-position: center;
+  
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+  
+  /* Real clickable area over the printed button */
+  
+  .cover-open-button {
+    position: absolute;
+    z-index: 5;
+  
+    left: 30%;
+    top: 63%;
+    width: 40%;
+    height: 8%;
+  
+    padding: 0;
+    border: 0;
+    border-radius: 100px;
+  
+    background: transparent;
+    cursor: pointer;
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .cover-open-button:hover {
+    transform: scale(1.04);
+  }
+  
+  .cover-open-button:focus-visible {
+    outline: 3px solid var(--soft-gold);
+    outline-offset: 4px;
+  }
+  
+  /* Opening entrance animation */
+  
+  @keyframes coverEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(24px) scale(0.97);
+      filter: blur(5px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      filter: blur(0);
+    }
+  }
+  
+  /* When the invitation opens */
+  
+  .opening.closed {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  
+  .opening.closed .wedding-cover {
+    animation: coverReveal 1.1s ease forwards;
+  }
+  
+  @keyframes coverReveal {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  
+    55% {
+      opacity: 1;
+      transform: translateY(-18px) scale(1.025);
+    }
+  
+    100% {
+      opacity: 0;
+      transform: translateY(-90px) scale(1.08);
+    }
+  }
+  
+  /* Legacy opening styles, if still used */
+  
+  .opening-paper {
+    width: min(100%, 470px);
+    padding: 15px;
+    background: var(--cream);
+    box-shadow: var(--shadow);
+  }
+  
+  .opening-border {
+    min-height: 650px;
+    padding: 45px 22px;
+    border: 1px solid var(--soft-gold);
+    text-align: center;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .opening h1 {
+    margin: 15px 0 25px;
+    font-size: clamp(54px, 10vw, 78px);
+    font-weight: 500;
+    line-height: 1;
+  }
+  
+  .opening-names {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    line-height: 1.15;
+  }
+  
+  .opening-date {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  
+  .tap-hint {
+    margin-top: 20px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  
+  /* =====================================================
+     BUTTONS
+  ===================================================== */
+  
+  .primary-button {
+    position: relative;
+  
+    padding: 16px 30px;
+  
+    border: 1px solid #f3e1bc;
+    border-radius: 40px;
+  
+    background: linear-gradient(
+      135deg,
+      #c6a268,
+      #e9d2a1,
+      #b9945c
+    );
+  
+    color: white;
+  
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  
+    box-shadow: 0 8px 25px rgba(195, 160, 105, 0.25);
+  
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  
+  .primary-button:hover {
+    transform: translateY(-3px);
+  
+    box-shadow: 0 13px 30px rgba(195, 160, 105, 0.35);
+  }
+  
+  .glass-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  
+    padding: 15px 30px;
+  
+    border: 1px solid #ead7b6;
+    border-radius: 40px;
+  
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--deep-gold);
+  
+    font-size: 15px;
+  
+    box-shadow: 0 8px 24px rgba(194, 165, 119, 0.12);
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .glass-button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .glass-button span {
+    font-size: 21px;
+  }
+  
+  /* =====================================================
+     HERO
+  ===================================================== */
+  
+  .hero {
+    min-height: 820px;
+  
+    padding: 100px 32px;
+  
+    text-align: center;
+  
+    background:
+      radial-gradient(
+        ellipse at top,
+        rgba(246, 231, 205, 0.45),
+        transparent 55%
+      ),
+      var(--ivory);
+  }
+  
+  .hero h1 {
+    margin: 20px 0 32px;
+  
+    font-size: clamp(48px, 10vw, 72px);
+    font-weight: 500;
+    line-height: 1.05;
+  
+    color: var(--deep-gold);
+  }
+  
+  .hero h1 span {
+    color: var(--soft-gold);
+  }
+  
+  .hero-quote {
+    max-width: 430px;
+    margin: 28px auto;
+  
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.4;
+  
+    color: #9e815a;
+  }
+  
+  .hero-message {
+    max-width: 410px;
+    margin: 35px auto;
+  
+    font-size: 13px;
+    line-height: 2.1;
+  
+    color: var(--muted);
+  }
+  
+  .names {
+    display: flex;
+    flex-direction: column;
+  
+    margin: 40px 0;
+  
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(48px, 10vw, 68px);
+    line-height: 1.05;
+  
+    color: var(--deep-gold);
+  }
+  
+  .names em {
+    margin: 10px 0;
+    font-size: 42px;
+    color: var(--soft-gold);
+  }
+  
+  .hero-bottom {
+    margin-top: 45px;
+  
+    font-size: 10px;
+    letter-spacing: 3px;
+  
+    color: var(--deep-gold);
+  }
+  
+  /* =====================================================
+     QURAN
+  ===================================================== */
+  
+  .quran-section {
+    padding: 85px 32px;
+  
+    text-align: center;
+  
+    background: #fff9ef;
+  
+    border-top: 1px solid #f1e6d5;
+    border-bottom: 1px solid #f1e6d5;
+  }
+  
+  .bismillah,
+  .quran-verse,
+  .quran-source {
+    font-family: "Amiri", serif;
+  }
+  
+  .bismillah {
+    margin-top: 30px;
+    font-size: 23px;
+    color: var(--deep-gold);
+  }
+  
+  .quran-verse {
+    font-size: 27px;
+    line-height: 2.2;
+    color: #94784f;
+  }
+  
+  .quran-source {
+    font-size: 17px;
+    color: var(--muted);
+  }
+  
+  /* =====================================================
+     DATE & VENUE
+  ===================================================== */
+  
+  .date-section {
+    position: relative;
+  
+    padding: 75px 25px 115px;
+  
+    text-align: center;
+  
+    background:
+      radial-gradient(
+        ellipse at bottom,
+        rgba(242, 222, 187, 0.4),
+        transparent 65%
+      ),
+      var(--ivory);
+  }
+  
+  .venue-title {
+    margin: 20px 0 8px;
+  
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  
+    color: var(--deep-gold);
+  }
+  
+  .venue-subtitle {
+    margin: 0 0 35px;
+  
+    font-family: "Amiri", serif;
+    font-size: 21px;
+  
+    color: var(--text);
+  }
+  
+  /* =====================================================
+     CALENDAR
+  ===================================================== */
+  
+  .calendar-card {
+    max-width: 390px;
+    margin: 0 auto 30px;
+  
+    overflow: hidden;
+  
+    border: 1px solid #f0e4d0;
+    border-radius: 30px;
+  
+    background: white;
+  
+    box-shadow:
+      0 20px 50px rgba(175, 143, 96, 0.17),
+      0 5px 15px rgba(175, 143, 96, 0.07);
+  }
+  
+  .calendar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  
+    height: 72px;
+  
+    background: linear-gradient(
+      110deg,
+      #b99a67,
+      #e2c99a,
+      #c5a56f
+    );
+  
+    color: white;
+  
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  
+  .calendar-top strong {
+    font-size: 21px;
+    letter-spacing: 1px;
+  }
+  
+  .calendar-body {
+    padding: 20px 20px 45px;
+  }
+  
+  .big-date {
+    font-size: clamp(130px, 30vw, 175px);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -10px;
+  
+    color: #c6a66e;
+  }
+  
+  .short-divider {
+    width: 70px;
+    height: 1px;
+  
+    margin: 0 auto 25px;
+  
+    background: var(--line);
+  }
+  
+  .calendar-body p {
+    font-size: 17px;
+    letter-spacing: 5px;
+    color: var(--deep-gold);
+  }
+  
+  .calendar-body > strong {
+    font-size: 22px;
+    letter-spacing: 2px;
+    color: var(--deep-gold);
+  }
+  
+  /* =====================================================
+     COUNTDOWN
+  ===================================================== */
+  
+  .countdown-panel {
+    position: relative;
+    z-index: 2;
+  
+    max-width: 470px;
+    margin: 15px auto 0;
+    padding: 25px 17px 28px;
+  
+    border: 1px solid white;
+    border-radius: 26px;
+  
+    background: linear-gradient(
+      145deg,
+      #fffaf1,
+      #f5e8d1
+    );
+  
+    box-shadow: 0 15px 35px rgba(183, 151, 102, 0.15);
+  }
+  
+  .countdown-panel > p {
+    margin: 0 0 22px;
+  
+    font-size: 13px;
+    letter-spacing: 3px;
+  
+    color: var(--deep-gold);
+  }
+  
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 9px;
+  }
+  
+  .countdown-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  
+    padding: 18px 4px;
+  
+    border: 1px solid #f0dfc1;
+    border-radius: 15px;
+  
+    background: rgba(255, 255, 255, 0.78);
+  }
+  
+  .countdown-grid strong {
+    font-size: clamp(25px, 6vw, 37px);
+    font-weight: 500;
+  
+    color: var(--deep-gold);
+  }
+  
+  .countdown-grid span {
+    font-size: 10px;
+    letter-spacing: 1px;
+  
+    color: var(--muted);
+  }
+  
+  /* =====================================================
+     FLOWER DECORATION
+  ===================================================== */
+  
+  .flower-decoration {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+  
+    display: flex;
+    justify-content: space-around;
+  
+    font-size: 85px;
+    color: white;
+  
+    opacity: 0.9;
+  
+    text-shadow: 3px 6px 10px rgba(177, 153, 114, 0.25);
+  
+    pointer-events: none;
+  }
+  
+  .flower-decoration span:nth-child(even) {
+    transform: translateY(30px) rotate(25deg);
+  }
+  
+  /* =====================================================
+     EVENTS & TIMELINE
+  ===================================================== */
+  
+  .events-section {
+    padding: 95px 28px;
+    text-align: center;
+  
+    background: #fffdf8;
+  }
+  
+  .events-section h2,
+  .location-section h2,
+  .ending-section h2 {
+    margin: 20px 0 40px;
+  
+    font-size: 52px;
+    font-weight: 500;
+  
+    color: var(--deep-gold);
+  }
+  
+  .timeline {
+    position: relative;
+  
+    max-width: 470px;
+    margin: 40px auto 50px;
+  }
+  
+  .timeline::before {
+    content: "";
+  
+    position: absolute;
+    top: 15px;
+    bottom: 30px;
+    left: 35%;
+  
+    width: 1px;
+  
+    background: #e4d0ae;
+  }
+  
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 30% 10% 60%;
+    align-items: start;
+  
+    min-height: 145px;
+  
+    text-align: left;
+  }
+  
+  .timeline-time {
+    padding: 5px 12px 0 0;
+  
+    text-align: right;
+  
+    font-size: 13px;
+    font-weight: 700;
+  
+    color: var(--deep-gold);
+  }
+  
+  .timeline-dot {
+    position: relative;
+    z-index: 1;
+  
+    width: 22px;
+    height: 22px;
+    margin: 2px auto;
+  
+    border: 6px solid #fff5e5;
+    border-radius: 50%;
+  
+    background: var(--soft-gold);
+  
+    box-shadow: 0 0 0 5px #f2e6d1;
+  }
+  
+  .timeline-content {
+    padding: 0 0 20px 12px;
+    text-align: right;
+  }
+  
+  .timeline-content h3 {
+    margin: 0;
+  
+    font-family: "Amiri", serif;
+    font-size: 24px;
+    line-height: 1.5;
+  
+    color: var(--deep-gold);
+  }
+  
+  .timeline-content p {
+    margin: 5px 0;
+  
+    font-family: "Amiri", serif;
+    font-size: 16px;
+    line-height: 1.8;
+  
+    color: var(--text);
+  }
+  
+  .section-divider {
+    width: 75px;
+    height: 1px;
+  
+    margin: 45px auto;
+  
+    background: var(--soft-gold);
+  }
+  
+  /* =====================================================
+     REMINDERS
+  ===================================================== */
+  
+  .reminders {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  
+    max-width: 470px;
+    margin: 0 auto;
+  }
+  
+  .reminder {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+  
+    min-height: 75px;
+    padding: 14px 17px;
+  
+    border: 1px solid #f0e4d2;
+    border-radius: 20px;
+  
+    background: white;
+  
+    text-align: left;
+  
+    box-shadow: 0 7px 23px rgba(185, 155, 110, 0.09);
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .reminder:hover {
+    transform: translateY(-3px);
+  }
+  
+  .reminder-icon {
+    display: grid;
+    place-items: center;
+  
+    flex: 0 0 43px;
+  
+    width: 43px;
+    height: 43px;
+  
+    border-radius: 50%;
+  
+    background: #fff8ed;
+  
+    font-size: 23px;
+    color: var(--soft-gold);
+  }
+  
+  .reminder p {
+    margin: 0;
+  
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.7;
+  
+    color: var(--text);
+  }
+  
+  /* =====================================================
+     LOCATION
+  ===================================================== */
+  
+  .location-section {
+    padding: 90px 25px;
+  
+    text-align: center;
+  
+    background: #fff9ef;
+  }
+  
+  .location-section p {
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: var(--muted);
+  }
+  
+  /* =====================================================
+     ENDING
+  ===================================================== */
+  
+  .ending-section {
+    padding: 90px 25px 130px;
+  
+    text-align: center;
+  
+    background: var(--ivory);
+  }
+  
+  .ending-section p {
+    font-size: 13px;
+    line-height: 1.9;
+  }
+  
+  .ending-names {
+    margin: 40px 0;
+  
+    font-family: "Cormorant Garamond", serif;
+    font-size: 37px;
+  
+    color: var(--deep-gold);
+  }
+  
+  /* =====================================================
+     BOTTOM NAVIGATION
+  ===================================================== */
+  
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    z-index: 50;
+  
+    transform: translateX(-50%);
+  
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  
+    width: min(100%, 570px);
+    height: 80px;
+  
+    border: 1px solid #eee0c9;
+    border-radius: 20px 20px 0 0;
+  
+    background: rgba(255, 253, 248, 0.96);
+  
+    backdrop-filter: blur(20px);
+  
+    box-shadow: 0 -6px 25px rgba(175, 143, 96, 0.1);
+  }
+  
+  .bottom-nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  
+    padding: 0;
+  
+    border: none;
+    background: none;
+  
+    color: var(--deep-gold);
+  
+    transition: transform 0.25s ease;
+  }
+  
+  .bottom-nav button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .nav-icon {
+    font-size: 26px;
+  }
+  
+  .bottom-nav small {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Center button styling.
+     Replace camera with a heart in HTML
+     because photography is prohibited. */
+  
+  .camera-nav {
+    position: relative;
+  }
+  
+  .camera-gold {
+    display: grid;
+    place-items: center;
+  
+    width: 65px;
+    height: 65px;
+  
+    margin-top: -35px;
+  
+    border: 3px solid #fff7e8;
+    border-radius: 50%;
+  
+    background: linear-gradient(
+      135deg,
+      #f3dfb6,
+      #d7b878,
+      #c7a365
+    );
+  
+    color: white;
+  
+    box-shadow: 0 5px 18px rgba(186, 153, 96, 0.28);
+  }
+  
+  /* =====================================================
+     CAMERA LEGACY STYLES
+     Kept only so older HTML doesn't break.
+  ===================================================== */
+  
+  .camera-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+  
+    display: flex;
+    flex-direction: column;
+  
+    background: #1b1714;
+    color: white;
+  }
+  
+  .camera-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 17px;
+  
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  
+  .camera-header button {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 25px;
+  }
+  
+  .camera-preview {
+    position: relative;
+    flex: 1;
+  
+    width: min(100%, 500px);
+    min-height: 0;
+  
+    margin: auto;
+    overflow: hidden;
+  
+    background: #3c342d;
+  }
+  
+  .camera-preview video {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover;
+  }
+  
+  .camera-tint {
+    position: absolute;
+    inset: 0;
+  
+    background: rgba(255, 247, 225, 0.08);
+    pointer-events: none;
+  }
+  
+  .photo-frame {
+    position: absolute;
+    inset: 18px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 28px 12px;
+  
+    border: 2px solid #f0d79c;
+    outline: 1px solid #f0d79c8c;
+    outline-offset: -10px;
+  
+    text-align: center;
+    pointer-events: none;
+  }
+  
+  .frame-initials {
+    font-size: 20px;
+    letter-spacing: 6px;
+  }
+  
+  .frame-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .frame-caption em {
+    font: italic 31px "Cormorant Garamond", serif;
+  }
+  
+  .frame-caption strong {
+    font: 27px "Cormorant Garamond", serif;
+  }
+  
+  .frame-caption span {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+  
+  #cameraStatus {
+    min-height: 15px;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .camera-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+  
+    min-height: 110px;
+    padding: 18px;
+  }
+  
+  #capturePhoto {
+    width: 72px;
+    height: 72px;
+  
+    border: 5px solid white;
+    border-radius: 50%;
+  
+    background: #d9b970;
+  }
+  
+  #downloadPhoto {
+    padding: 13px 18px;
+  
+    border: 1px solid #d9b970;
+    border-radius: 25px;
+  
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  /* =====================================================
+     SCROLL ANIMATIONS
+  ===================================================== */
+  
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+  
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+  
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* =====================================================
+     RESPONSIVE
+  ===================================================== */
+  
+  @media (max-width: 600px) {
+  
+    .opening::before {
+      filter: blur(18px) brightness(1.08);
+    }
+  
+    .wedding-cover {
+      width: min(100vw, 66.6667dvh);
+      height: auto;
+      aspect-ratio: 2 / 3;
+    }
+  
+    .hero {
+      padding: 90px 25px;
+    }
+  
+    .hero h1 {
+      font-size: 54px;
+    }
+  
+    .hero-quote {
+      font-size: 22px;
+    }
+  
+    .date-section {
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+  
+    .events-section {
+      padding-left: 17px;
+      padding-right: 17px;
+    }
+  
+    .flower-decoration {
+      font-size: 65px;
+    }
+  
+  }
+  
+  @media (max-width: 420px) {
+  
+    .calendar-top {
+      height: 60px;
+    }
+  
+    .calendar-body {
+      padding-bottom: 35px;
+    }
+  
+    .timeline-content h3 {
+      font-size: 21px;
+    }
+  
+    .timeline-content p {
+      font-size: 15px;
+    }
+  
+    .events-section h2 {
+      font-size: 43px;
+    }
+  
+    .countdown-grid {
+      gap: 6px;
+    }
+  
+    .countdown-grid > div {
+      padding: 15px 3px;
+    }
+  
+  }
+  
+  /* =====================================================
+     ACCESSIBILITY
+  ===================================================== */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    html {
+      scroll-behavior: auto;
+    }
+  
+    .reveal {
+      opacity: 1;
+      transform: none;
+    }
+  
+    .wedding-cover,
+    .opening.closed .wedding-cover {
+      animation: none;
+    }
+  
+    *,
+    *::before,
+    *::after {
+      transition-duration: 0.01ms !important;
+    }
+  
+  }
+  

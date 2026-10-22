@@ -1,0 +1,225 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3ec">
+  <title>Duha & Captain Moatasem | Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- OPENING SCREEN -->
+  <div id="opening" class="opening">
+    <div class="opening-card">
+      <span class="eyebrow">A CELEBRATION OF LOVE</span>
+      <div class="ornament">✦</div>
+      <h1>Forever starts here.</h1>
+      <div class="heart">♡</div>
+      <h2>Duha <span>&</span> Captain Moatasem</h2>
+      <p>Wednesday · October 28, 2026</p>
+      <button id="openInvitation" class="gold-button">
+        OPEN INVITATION <span>↗</span>
+      </button>
+      <small>Tap to enter our celebration</small>
+    </div>
+  </div>
+
+  <!-- MAIN INVITATION -->
+  <main id="invitation">
+
+    <section class="hero section">
+      <span class="eyebrow">THE BEGINNING OF FOREVER</span>
+      <div class="ornament">✧</div>
+      <h1>Forever starts here.</h1>
+      <p class="quote">
+        “Not just a night added to our lives,
+        but a new lifetime whose blessings
+        we wish to begin surrounded by you.”
+      </p>
+      <p class="intro">
+        With all our love and a joy we have long awaited,
+        we invite you to be part of our love story
+        and share with us the happiness of our
+        beautiful new beginning.
+      </p>
+      <div class="couple-names">
+        Duha <span>&</span><br>
+        Captain Moatasem
+      </div>
+      <div class="flourish">❦</div>
+    </section>
+
+    <!-- QURAN -->
+    <section class="section quran-section">
+      <div class="section-label">BLESSED BEGINNINGS</div>
+      <p class="bismillah" dir="rtl">
+        بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+      </p>
+      <p class="quran" dir="rtl">
+        ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنْفُسِكُمْ
+        أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا
+        وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً ﴾
+      </p>
+      <p class="verse-reference">سورة الروم · الآية ٢١ (مقتطف)</p>
+    </section>
+
+    <!-- DATE -->
+    <section class="section date-section" id="date">
+      <div class="section-label">SAVE THE DATE</div>
+      <h2>Our Special Day</h2>
+      <p class="subtitle">Wednesday, October 28, 2026</p>
+
+      <div class="calendar">
+        <div class="calendar-month">OCTOBER 2026</div>
+        <div class="calendar-grid calendar-head">
+          <span>S</span><span>M</span><span>T</span>
+          <span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+        <div class="calendar-grid" id="calendarDays"></div>
+      </div>
+
+      <p class="event-time">6:00 PM – 8:00 PM</p>
+      <button id="saveDate" class="outline-button">SAVE THE DATE ↗</button>
+
+      <div class="countdown" id="countdown">
+        <div><strong id="days">00</strong><span>DAYS</span></div>
+        <div><strong id="hours">00</strong><span>HOURS</span></div>
+        <div><strong id="minutes">00</strong><span>MINUTES</span></div>
+        <div><strong id="seconds">00</strong><span>SECONDS</span></div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="section schedule-section">
+      <div class="section-label">THE CELEBRATION</div>
+      <h2>برنامج الحفل</h2>
+
+      <div class="schedule-card" dir="rtl">
+        <div class="schedule-item">
+          <div class="time-badge">٦:٠٠ مساءً</div>
+          <div class="schedule-content">
+            <h3>موعد حضور الضيوف</h3>
+            <p>نرجو من ضيوفنا الكرام التواجد والجلوس داخل القاعة بحلول الساعة السادسة مساءً.</p>
+          </div>
+        </div>
+        <div class="schedule-item">
+          <div class="time-badge">٧:٣٠ مساءً</div>
+          <div class="schedule-content">
+            <h3>موعد دخول الرجال</h3>
+            <p>سيكون دخول الرجال إلى القاعة في تمام الساعة السابعة والنصف مساءً.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section class="section venue-section" id="location">
+      <div class="section-label">THE VENUE</div>
+      <h2>Where Love Celebrates</h2>
+      <div class="venue-icon">⌖</div>
+      <h3>Al Nakheel Palace Hall</h3>
+      <p>صالة قصر النخيل · إربد، الأردن</p>
+      <button id="mapButton" class="gold-button">VIEW LOCATION ↗</button>
+      <div class="parking-note">
+        <span>♧</span>
+        <div>
+          <strong>Parking Available</strong>
+          <p>تتوفر مواقف سيارات لخدمة ضيوفنا الكرام.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="section notes-section">
+      <div class="section-label">A LITTLE NOTE</div>
+      <h2>With Love & Respect</h2>
+      <p dir="rtl">
+        نرجو من ضيوفنا الكرام عدم نشر الصور أو مقاطع الفيديو
+        على مواقع التواصل الاجتماعي، احترامًا لخصوصية الجميع.
+      </p>
+      <p class="thank-you">Thank you for celebrating with us. ♡</p>
+    </section>
+
+    <!-- ENDING -->
+    <section class="section ending-section">
+      <div class="ornament">✦</div>
+      <h2>Can't wait to see you.</h2>
+      <p>Love, laughter & a lifetime of memories.</p>
+      <div class="couple-names small-names">
+        Duha & Captain Moatasem
+      </div>
+      <span class="eyebrow">28 · 10 · 2026</span>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav" aria-label="Invitation navigation">
+    <button id="musicButton" aria-label="Play music">
+      <span class="nav-icon">♫</span>
+      <span id="musicLabel">MUSIC</span>
+    </button>
+
+    <button id="dateNav" aria-label="Event date">
+      <span class="nav-icon">▦</span>
+      <span>DATE</span>
+    </button>
+
+    <button id="cameraButton" class="camera-nav" aria-label="Open camera">
+      <span class="camera-circle">📷</span>
+      <span>CAMERA</span>
+    </button>
+
+    <button id="locationNav" aria-label="View location">
+      <span class="nav-icon">⌖</span>
+      <span>LOCATION</span>
+    </button>
+
+    <button id="shareButton" aria-label="Share invitation">
+      <span class="nav-icon">♡</span>
+      <span>SHARE</span>
+    </button>
+  </nav>
+
+  <!-- CAMERA MODAL -->
+  <div id="cameraModal" class="camera-modal" hidden>
+    <div class="camera-top">
+      <button id="closeCamera" aria-label="Close camera">✕</button>
+      <span>OUR LOVE STORY</span>
+      <button id="flipCamera" aria-label="Switch camera">↻</button>
+    </div>
+
+    <div class="camera-stage">
+      <video id="cameraVideo" autoplay playsinline muted></video>
+      <div class="camera-filter"></div>
+      <div class="camera-frame">
+        <div class="frame-top">D ✦ M</div>
+        <div class="frame-bottom">
+          <span>Forever starts here.</span>
+          <strong>Duha & Captain Moatasem</strong>
+          <small>28 · 10 · 2026</small>
+        </div>
+      </div>
+      <canvas id="photoCanvas" hidden></canvas>
+    </div>
+
+    <p id="cameraStatus" class="camera-status" aria-live="polite"></p>
+
+    <div class="camera-actions">
+      <button id="capturePhoto" class="capture-button" aria-label="Take photo"></button>
+      <a id="downloadPhoto" class="download-button" hidden> SAVE PHOTO ↓ </a>
+    </div>
+  </div>
+
+  <audio id="weddingMusic" loop preload="none">
+    <source src="assets/music/wedding-music.mp3" type="audio/mpeg">
+  </audio>
+
+</body>
+</html>
