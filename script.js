@@ -119,9 +119,9 @@ $("saveDate").addEventListener("click", () => {
 // LOCATION
 // ===================================
 
-const mapUrl =
-  "https://maps.app.goo.gl/7aCuWpm8ccWfR1ve6" +
-  encodeURIComponent("صالة قصر النخيل اربد");
+
+const mapUrl = "https://maps.app.goo.gl/x5DSej1JFoo54hAk9?g_st=ic";
+
 
 function openLocation() {
   window.open(mapUrl, "_blank", "noopener,noreferrer");
