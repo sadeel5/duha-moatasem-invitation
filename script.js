@@ -418,4 +418,10 @@ function createSparkle() {
       createSparkle();
     }, 380);
   }
-  
+  const weddingAudio = document.getElementById("weddingMusic");
+
+if (weddingAudio) {
+  weddingAudio.addEventListener("loadedmetadata", () => {
+    weddingAudio.currentTime = 3;
+  });
+}
